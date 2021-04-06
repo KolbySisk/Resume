@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ContactInfoSection } from "./components/contact-info-section";
+import { TitledSection } from "./components/titled-section";
+import { ExperienceItem } from "./components/experience-item";
+import { contactInfo, profile, educations, experiences } from "./data";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="flex space-x-16">
+      <aside className="w-1/3 space-y-8">
+        <img
+          className="w-1/2"
+          src={process.env.PUBLIC_URL + "/logo.svg"}
+          alt="Kolby Sisk"
+        />
+
+        <ContactInfoSection {...contactInfo} />
+
+        <TitledSection title="Profile">
+          <p>{profile}</p>
+        </TitledSection>
+        <TitledSection title="Education">
+          {educations.map((education) => (
+            <>
+              <p className="font-bold">{education.degree}</p>
+              <p>{education.description}</p>
+            </>
+          ))}
+        </TitledSection>
+      </aside>
+
+      <div className="flex-1">
+        <TitledSection title="Experience">
+          <div className="space-y-8">
+            {experiences.map((experience) => (
+              <ExperienceItem {...experience} />
+            ))}
+          </div>
+        </TitledSection>
+      </div>
+    </main>
   );
 }
 
