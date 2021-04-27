@@ -19,7 +19,7 @@ export const ExperienceItem: FC<Experience> = ({
       </p>
       <p className="mt-2">{description}</p>
       {!!bulletPoints?.length && (
-        <ol className="list-disc px-8">
+        <ol className="list-disc px-8 mt-2 space-y-2">
           {bulletPoints.map((bulletPoint) => (
             <li>{bulletPoint}</li>
           ))}

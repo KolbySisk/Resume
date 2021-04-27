@@ -1,4 +1,9 @@
+import { FC } from "react";
 import { Experience, Education, ContactInfo } from "../types";
+
+export const Logo: FC = () => (
+  <img src={process.env.PUBLIC_URL + "/logo.svg"} alt="Kolby Sisk" />
+);
 
 export const contactInfo: ContactInfo = {
   email: `kolby.sisk@gmail.com`,
@@ -78,4 +83,21 @@ export const experiences: Experience[] = [
       `Handled Linux DevOps to launch and support projects.`,
     ],
   },
+];
+
+export const skills: string[] = [
+  "Team Management & Leadership",
+  "Project Management",
+  "JavaScript",
+  "Next.js",
+  "React",
+  "Angular",
+  "Ionic",
+  "React Native",
+  "Node",
+  ".NET Core",
+  "MySql",
+  "Git",
+  "UX & UI Design",
+  "Brand Design",
 ];
